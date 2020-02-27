@@ -1,0 +1,69 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background-color: #F7FBFF;
+    font-family: 'Thasadith', sans-serif;
+}
+
+.navbar {
+    padding: 30px;
+    background: #343A40;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#submit-button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+#submit-button:hover {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    color: #343A40;
+}
+
+.jumbotron {
+    margin-top: 40px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #343A40;
+    padding: 40px;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.btn {
+    margin: 20px;
+    border: 2px solid #343A40;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(151, 151, 151, 0.25);
+}
+
+.response {
+    padding-top: 20px;
+}
