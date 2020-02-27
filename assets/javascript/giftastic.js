@@ -68,6 +68,8 @@ $('button').on("click", function() {
         }).then(function(response) {
             for (var i=0; i<response.data.length; i++) {
                 console.log(response.data[i].images.fixed_height_still.url);
+                $("#GIFimages").prepend('<img src=' + response.data[i].images.fixed_height_still.url + '/>');
+                
             }
         })
 })
