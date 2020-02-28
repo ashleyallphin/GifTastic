@@ -80,7 +80,7 @@ $('button').on("click", function() {
                 //prepend in here:
                 $("#GIFimages").prepend(result);
 
-                // $("#GIFimages").prepend('<img id="GIFimage" src=' + response.data[i].images.fixed_height_still.url + '/> ');
+                $("#GIFimages").prepend('<img id="GIFimage" src=' + response.data[i].images.fixed_height_still.url + '/> ');
             }
         })
 })
