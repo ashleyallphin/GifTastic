@@ -83,10 +83,11 @@ body {
 
 .empty-button {
     margin: 10px;
-    border: 2px solid #343A40;
+    border: 2px solid white;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
+    
 }
 
 
@@ -102,4 +103,14 @@ body {
 
 .choose-category {
     flex: 1;
+}
+
+@media only screen and (max-width: 640px) {
+    #submit-button {
+        color: white;
+        border: 2px solid white;
+        border-radius: 3px;
+        margin-left: 0;
+        margin-top:20px;
+    } 
 }
