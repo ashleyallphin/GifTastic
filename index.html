@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GifTastic: GIPHY Library</title>
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/GIPHY-logo.ico" />
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Thasadith:400,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Thasadith:400,700&display=swap" rel="stylesheet">
 
-<!-- CSS Reset -->
+    <!-- CSS Reset -->
     <link rel="stylesheet" href="reset.css">
 
-<!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-<!-- My CSS -->
+    <!-- My CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <a class="navbar-brand">GIF Library</a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Submit">
-          <button class="btn my-2 my-sm-0" id="submit-button" type="submit">Add Category</button>
+        <form class="form-inline search-form">
+            <input class="form-control mr-sm-3" id="user-input" type="search" placeholder="Search" aria-label="Submit">
+            <button class="btn my-2 my-sm-0" id="submit-button" type="submit">Add Category</button>
         </form>
-      </nav>
+    </nav>
 
-<!-- Buttons -->
-<div class="container buttons">
-    <div class="row">
-        <div class="jumbotron">
-            <h3>Choose a category.</h3>
-            <div class="keyword-buttons">
+    <!-- Buttons -->
+    <div class="container buttons-and-images">
+        <div class="row">
+            <div class="jumbotron">
+                <h3>Choose a category.</h3>
 
-                <!-- <button class="btn" data-category="dog">Dog</button>
-                <button class="btn" data-category="baseball">baseball</button>
-                <button class="btn" data-category="Garth Brooks">Garth Brooks</button>
-                <button class="btn" data-category="Texas Longhorns">Texas Longhorns</button>
-                <button class="btn" data-category="Noel Fielding">Noel Fielding</button>
-                <button class="btn" data-category="The Mighty Boosh">The Mighty Boosh</button>
-                <button class="btn" data-category="The Great British Bake Off">GBBO</button>
-                <button class="btn" data-category="Kurupt FM">Kurupt FM</button>
-                <button class="btn" data-category="Maria Sharapova">Maria Sharapova</button>
-                <button class="btn" data-category="Atlanta Braves">Atlanta Braves</button>
-                <button class="btn" data-category="The Office">The Office</button>
-                <button class="btn" data-category="annoyed">annoyed</button>
-                <button class="btn" data-category="Pantone">Pantone</button>
-                <button class="btn" data-category="FRIENDS">FRIENDS</button>
-                <button class="btn" data-category="London">London</button>
-                <button class="btn" data-category="unicorn">unicorn</button>
-                <button class="btn" data-category="dinosaur">dinosaur</button>
-                <button class="btn" data-category="clouds">clouds</button> -->
+                <!-- where the buttons go -->
+                <div id="keyword-buttons">
+
+
+                </div>
+                <hr class="my-4">
+                <div>
+                    <div class="content">
+                        <h3>Results</h3>
+                    </div>
+
+                    <!-- where the images go -->
+                    <div class="GIFimages" id="GIFimages">
+                    </div>
+                </div>
+
 
             </div>
-            <hr class="my-4">
-            <div>
-            <div class="content">
-                <h3>Results</h3>
-            </div>
-            
-            <div class="GIFimages" id="GIFimages">
-            </div>
-            </div>
-           
-
-        </div>    
+        </div>
     </div>
-</div>
 
 
 
 
 
-<!-- footer -->
-<!-- <div class ="footer">
+    <!-- footer -->
+    <!-- <div class ="footer">
     <p>Boot Camp Homework #6  version 0.1 </p>
 </div> -->
 
 
-<!-- end of body -->
+    <!-- end of body -->
 
-<!-- Bootstrap javaScript -->
+    <!-- Bootstrap javaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -99,15 +85,14 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-<!-- jQuery -->
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
-<!-- My javaScript -->
+    <!-- My javaScript -->
     <script src="assets/javascript/giftastic.js"></script>
 
 </body>
+
 </html>
