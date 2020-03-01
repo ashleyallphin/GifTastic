@@ -36,23 +36,38 @@ $(document).on("click", ".keywordButton", function() {
         method: "GET",
         }).then(function(response) {
             console.log(response);
+            //for ever instace of response (10)
             for (var i = 0; i < response.data.length; i++) {
+                //create a div with the class 'search-item'
                 var responseDiv = $("<div class='search-item'>");
+                //grab the rating of the GIF
                 var rating = (response.data[i].rating);
                 var ratingText = rating.toString();
                 var ratingUppercase = ratingText.toUpperCase();
+                //display the rating in an h5
                 var h5 = $('<h5>').html('Rating: <b>' + ratingUppercase);
+                //store the animated state
                 var animated = response.data[i].images.fixed_height.url;
+                //store the still state
                 var still = response.data[i].images.fixed_height_still.url;
+                //create an image tag for the image
                 var image = $("<img>");
+                //add the still attribute on load
                 image.attr('src', still);
+                //create data-still attribute equal to still
                 image.attr('data-still', still);
+                //create the data-animated attribute equal to animated
                 image.attr('data-animated', animated);
+                //create the data-state equal to the string 'still'
                 image.attr('data-state', 'still')
+                //give the image the class of 'searchImage'
                 image.addClass('searchImage');
+                //append the h5/rating into the responseDiv
                 responseDiv.append(h5);
+                //append the image into the responseDiv
                 responseDiv.append(image);
-                $('#GIFimages').append(responseDiv);
+                //prepend the responseDiv to the GIFImages section of the HTML page
+                $('#GIFimages').prepend(responseDiv);
             }
         })
 })
@@ -63,6 +78,24 @@ $("#submit-button").on("click", function () {
     renderButtons(buttonArray, 'keywordButton', '#keyword-buttons');
     return false;
 })
+
+
+//make the GIF animate on click
+$(document).on("click", '.searchImage', function () {
+    var state = $(this).attr('data-state');
+    if (state === 'still') {
+        $(this).attr('src',$(this).data('animated'));
+        $(this).attr('data-state','animated');
+    } else {
+        $(this).attr('src',$(this).data('still'));
+        $(this).attr('data-state','still');
+    }
+})
+
+
+
+
+
 
 //=============================================
 //CALL FUNCTIONS

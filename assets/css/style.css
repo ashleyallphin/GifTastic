@@ -66,6 +66,8 @@ body {
 
 #GIFimages {
     padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #GIFimages img {
@@ -74,7 +76,8 @@ body {
     max-width: 100%;
 }
 
-
-.content {
-    display: flex;;
+.search-item {
+    padding: 10px;
+    float: left;
 }
+
