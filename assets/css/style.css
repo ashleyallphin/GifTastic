@@ -81,3 +81,25 @@ body {
     float: left;
 }
 
+.empty-button {
+    margin: 10px;
+    border: 2px solid #343A40;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.empty-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(151, 151, 151, 0.25);
+}
+
+
+.choose-and-empty {
+    display: flex;
+}
+
+.choose-category {
+    flex: 1;
+}
