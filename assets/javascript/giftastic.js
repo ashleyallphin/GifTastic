@@ -14,6 +14,7 @@ $("#empty-button").on("click", function() {
     $("#GIFimages").empty();
     $(".load-more").empty();
     $(".empty-searches").hide();
+    
 })
 
 
@@ -56,12 +57,22 @@ $(document).on("click", ".keywordButton", function() {
                 //display the rating in an paragraph
                 var p = $('<p>').html('Rating: <b>' + ratingUppercase);
                                                 //store the animated state
+                    //display the FAVORITE OPTION in an paragraph
+                    var faves = $('<p>').html('Add to favorites');
+                    //add class to faves
+                    faves.addClass("faves");
+
+
                 var animated = response.data[i].images.fixed_height.url;
                 //store the still state
                 var still = response.data[i].images.fixed_height_still.url;
                 //create an image tag for the image
                 var image = $("<img>");
                 //add the still attribute on load
+
+                    //give faves an attribute
+                    faves.attr('src', response.data[i].images.fixed_height.url);
+
                 image.attr('src', still);
                 //create data-still attribute equal to still
                 image.attr('data-still', still);
@@ -77,6 +88,10 @@ $(document).on("click", ".keywordButton", function() {
                 responseDiv.append(p);
                 //append the image into the responseDiv
                 responseDiv.append(image);
+
+                    //append the favorites option responseDiv
+                    responseDiv.append(faves);
+
                 //prepend the responseDiv to the GIFImages section of the HTML page
                 $('#GIFimages').prepend(responseDiv);
 
@@ -88,13 +103,38 @@ $(document).on("click", ".keywordButton", function() {
             backToTopButton.addClass("btn-dark keyword-button");
             backToTopButton.html('<a style="color:white; text-decoration:none;" href="#top">Back to Top</a>');
             $(".load-more").append(backToTopButton);
-            })    
+            })
+
     })
 
-    
+
+
+//================ Add to favorites
+
+    $(document).on("click", '.faves', function () {
+        console.log($(this).attr("src"));
+        var favesImg = $("<img>");
+
+        $("#empty-faves").show();
+
+        //reveals the Favorites header and adds hr to separate from results
+        $("#favorites-section").show();
+
+        favesImg.attr('src', $(this).attr("src"));
+        $("#favorites-images").append(favesImg);
+    })    
+
+
+//================ Empty favorites
+
+$(document).on("click", '#empty-faves', function () {
+    $("#favorites-images").empty();
+    $("#favorites-section").hide();
+})    
 
 
 
+//================ Adds user input to the buttonArray
 
 $("#submit-button").on("click", function () {
     var newSearch = $('input').eq(0).val();
@@ -104,7 +144,8 @@ $("#submit-button").on("click", function () {
 })
 
 
-//make the GIF animate on click
+//================ make the GIF animate on click
+
 $(document).on("click", '.searchImage', function () {
     var state = $(this).attr('data-state');
     if (state === 'still') {
@@ -117,6 +158,11 @@ $(document).on("click", '.searchImage', function () {
 })
 
 
+
+
+
+
+
 //=============================================
 //CALL FUNCTIONS
 
@@ -126,5 +172,6 @@ $(function(){
     renderButtons(buttonArray,'keywordButton','#keyword-buttons');
     //run addToFavorites
     $(".empty-searches").hide();
+    $("#favorites-section").hide();
 
 })

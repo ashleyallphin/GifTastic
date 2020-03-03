@@ -72,7 +72,7 @@ body {
 
 #GIFimages img {
     margin-right: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     max-width: 100%;
 }
 
@@ -118,6 +118,14 @@ body {
     flex: 1;
 }
 
+#favorites-text-and-button {
+    display: flex;
+}
+
+#favorites-text {
+    flex: 1;
+}
+
 h5 {
     margin:0;
 }
@@ -127,6 +135,10 @@ h5 {
     
     display: block;
     
+}
+
+#favorites-images img {
+    margin: 20px;
 }
 
 @media only screen and (max-width: 640px) {
