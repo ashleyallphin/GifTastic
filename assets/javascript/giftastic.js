@@ -13,6 +13,7 @@
 $("#empty-button").on("click", function() {
     $("#GIFimages").empty();
     $(".load-more").empty();
+    $(".empty-searches").hide();
 })
 
 
@@ -37,7 +38,7 @@ $(document).on("click", ".keywordButton", function() {
         url: queryURL,
         method: "GET",
         }).then(function(response) {
-
+            $(".empty-searches").show();
             //for ever instace of response (10)
             for (var i = 0; i < response.data.length; i++) {
                 //create a div with the class 'search-item'
@@ -124,5 +125,6 @@ $(function(){
     //render the buttons when the page loads
     renderButtons(buttonArray,'keywordButton','#keyword-buttons');
     //run addToFavorites
+    $(".empty-searches").hide();
 
 })
