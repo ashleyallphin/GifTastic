@@ -116,6 +116,10 @@ body {
     display: flex;
 }
 
+.results-and-empty {
+    display: flex;
+}
+
 .empty-favorites {
     display: flex;
 }
@@ -125,6 +129,10 @@ body {
 }
 
 #favorites-text {
+    flex: 1;
+}
+
+.results-text {
     flex: 1;
 }
 
