@@ -88,7 +88,9 @@ body {
     max-width: 100%;
 }
 
-
+#favorites-images img {
+    max-width: 100%;
+}
 
 .search-item {
     padding: 10px;
@@ -114,12 +116,12 @@ body {
     display: flex;
 }
 
-.choose-category {
-    flex: 1;
+.empty-favorites {
+    display: flex;
 }
 
-#favorites-text-and-button {
-    display: flex;
+.choose-category {
+    flex: 1;
 }
 
 #favorites-text {
