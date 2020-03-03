@@ -30,6 +30,7 @@
 <body>
 
     <!-- Navbar -->
+    <a href="#top"></a>
     <nav class="navbar">
         <a class="navbar-brand">GIF Library</a>
         <form class="form-inline search-form">
@@ -45,18 +46,21 @@
                 <div class=" container">
                     <div class="row choose-and-empty">
 
-                        <div class="choose-category"><h3>Choose a category.</h3></div>
+                        <div class="choose-category">
+                            <h3 style="margin-bottom:15px;">Choose a category.</h3>
+                        </div>
                         <div class="empty-searches">
-                        <!-- empty results -->
-                        <button class="btn-dark my-2 my-sm-0 empty-button float-right" id="empty-button" type="empty">Empty Results</button>
+                            <!-- empty results -->
+                            <button class="btn-dark my-2 my-sm-0 empty-button float-right" id="empty-button"
+                                type="empty">Empty Results</button>
 
                         </div>
 
                     </div>
                 </div>
-                
 
-                
+
+
 
                 <!-- where the buttons go -->
                 <div id="keyword-buttons">
@@ -67,14 +71,18 @@
 
 
                 <div>
-                   
+
                     <div class="content">
                         <h3>Results</h3>
                     </div>
 
                     <!-- where the images go -->
-                    <div class="GIFimages" id="GIFimages">
-                    </div>
+                    
+                    <div class="GIFimages" id="GIFimages"></div>
+
+                    <div class="load-more"></div>
+
+
                 </div>
 
 
@@ -105,7 +113,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 

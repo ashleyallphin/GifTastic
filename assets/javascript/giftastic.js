@@ -12,6 +12,7 @@
 
 $("#empty-button").on("click", function() {
     $("#GIFimages").empty();
+    $(".load-more").empty();
 })
 
 
@@ -60,6 +61,8 @@ $(document).on("click", ".keywordButton", function() {
 
                 //create an image tag for the image
                 var image = $("<img>");
+
+                
                 //add the still attribute on load
                 image.attr('src', still);
                 //create data-still attribute equal to still
@@ -73,20 +76,49 @@ $(document).on("click", ".keywordButton", function() {
                 //append the h5/title into the responseDiv
                 responseDiv.append(h5);
 
+                
+
                 //append the p/rating into the responseDiv
                 responseDiv.append(p);
 
                 //append the image into the responseDiv
                 responseDiv.append(image);
                 //prepend the responseDiv to the GIFImages section of the HTML page
+
+
+
                 $('#GIFimages').prepend(responseDiv);
 
         } //end of for loop
         
+    }).then(function() {
+        $(".load-more").empty();
+        var backToTopButton = $("<button style='margin: 10px; border: 2px solid white; border-radius: 5px; font-size: 20px;    font-weight: bold; text-decoration:none'>");
+        backToTopButton.addClass("btn-dark keyword-button");
+        backToTopButton.html('<a style="color:white; text-decoration:none;" href="#top">Back to Top</a>');
+        $(".load-more").append(backToTopButton);
+    })    
 
     })
 
-        })
+    
+
+    $(document).on("click", ".load-more-button", function() {
+        alert("load more clicked")
+        // var data = $(this).data('type');
+        // var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1eoMKqWov4lRudP6LsC1de32vllX8xLa&q=" + data + "&limit=10&offset=20&lang=en";
+        // $.ajax({
+        //     url: queryURL,
+        //     method: "GET",
+        //     }).then(function(response) {
+    
+        //         //for ever instace of response (10)
+        //         for (var i = 0; i < response.data.length; i++) {
+
+        //         }
+
+            })
+
 
 
 $("#submit-button").on("click", function () {

@@ -122,6 +122,13 @@ h5 {
     margin:0;
 }
 
+
+.load-more {
+    
+    display: block;
+    
+}
+
 @media only screen and (max-width: 640px) {
     #submit-button {
         color: white;
