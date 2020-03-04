@@ -112,7 +112,25 @@ body {
 }
 
 
+.reset-keywords-button {
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.reset-keywords-button {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(151, 151, 151, 0.25);
+}
+
 .choose-and-empty {
+    display: flex;
+}
+
+.choose-and-reset-button {
     display: flex;
 }
 
@@ -128,11 +146,25 @@ body {
     flex: 1;
 }
 
+.choose-category-text {
+    flex: 1;
+}
+
 #favorites-text {
     flex: 1;
 }
 
 .results-text {
+    flex: 1;
+}
+
+
+#choose-h3 {
+    flex: 1;
+}
+
+
+.choose-a-category{
     flex: 1;
 }
 

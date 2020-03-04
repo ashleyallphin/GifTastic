@@ -1,14 +1,23 @@
 //===========================================
 //VARIABLES
-    
-    
+        
     //make an array of keywords
     var buttonArray = [
     "dog", "confused", "Garth Brooks", "Texas Longhorns", "Noel Fielding", "I Dream of Jeannie", "MST3K", "The Mighty Boosh", "GBBO", "Kurupt FM", "South Park", "Atlanta Braves", "The Office", "annoyed", "Pantone", "FRIENDS", "London", "unicorn", "dinosaur", "clouds", "srsly", "I Love Lucy", "rly", "Brock Lesnar", "It's Always Sunny in Philadelphia"
 ];
 
+
+
+
 //===========================================
 //FUNCTIONS
+
+
+
+
+
+
+
 
 $("#empty-button").on("click", function() {
     $("#GIFimages").empty();
@@ -59,6 +68,8 @@ $(document).on("click", ".keywordButton", function() {
                                                 //store the animated state
                     //display the FAVORITE OPTION in an paragraph
                     var faves = $('<p>').html('Add to favorites');
+                    //set the cursor to be a pointer because the selector is text
+                    faves.css('cursor', 'pointer');
                     //add class to faves
                     faves.addClass("faves");
 
@@ -137,11 +148,26 @@ $(document).on("click", '#empty-faves', function () {
 //================ Adds user input to the buttonArray
 
 $("#submit-button").on("click", function () {
-    var newSearch = $('input').eq(0).val().trim();
-    buttonArray.push(newSearch);
+    var userAddition = $('input').eq(0).val();
+    buttonArray.push(userAddition);
     renderButtons(buttonArray, 'keywordButton', '#keyword-buttons');
+    //empties the text imput field after form is submitted
+    $("form").trigger("reset");
+    // $(".reset-keywords").show();
     return false;
 })
+
+
+//================ clear user input to the array
+$("#reset-keywords-button").on("click", function () {
+    buttonArray.length = 0;
+    resetButtonsFunction();
+})
+
+function resetButtonsFunction() {
+    var buttonArray = buttonArray;
+    renderButtons(buttonArray,'keywordButton','#keyword-buttons');
+};
 
 
 //================ make the GIF animate on click
@@ -173,5 +199,6 @@ $(function(){
     //run addToFavorites
     $(".empty-searches").hide();
     $("#favorites-section").hide();
+    $(".reset-keywords").hide();
 
 })
