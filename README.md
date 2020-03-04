@@ -28,7 +28,7 @@ The user may add their own keyword buttons by submitting a value in the user inp
 
 The app is fully mobile responsive.
 
-Users may add their favorite GIFs to a `favorites` section.  The user may clear their favorites by clicking the Empty Favorites button.
+Users may add their favorite GIFs to a `favorites` section.  The user may clear their favorites by clicking the Empty Favorites button.  Note: GIFs append to Favorites section as animated for ease of copying and saving.
 
 
 ### Resources and Credits

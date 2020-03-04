@@ -137,7 +137,7 @@ $(document).on("click", '#empty-faves', function () {
 //================ Adds user input to the buttonArray
 
 $("#submit-button").on("click", function () {
-    var newSearch = $('input').eq(0).val();
+    var newSearch = $('input').eq(0).val().trim();
     buttonArray.push(newSearch);
     renderButtons(buttonArray, 'keywordButton', '#keyword-buttons');
     return false;
