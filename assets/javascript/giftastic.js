@@ -2,21 +2,15 @@
 //VARIABLES
         
     //make an array of keywords
-    var buttonArray = [
+    const originalArray = [
     "dog", "confused", "Garth Brooks", "Texas Longhorns", "Noel Fielding", "I Dream of Jeannie", "MST3K", "The Mighty Boosh", "GBBO", "Kurupt FM", "South Park", "Atlanta Braves", "The Office", "annoyed", "Pantone", "FRIENDS", "London", "unicorn", "dinosaur", "clouds", "srsly", "I Love Lucy", "rly", "Brock Lesnar", "It's Always Sunny in Philadelphia"
 ];
-
-
-
+var buttonArray = originalArray.map(item=>item)
+//buttonArray.push("anything");
+//console.log(originalArray);
 
 //===========================================
 //FUNCTIONS
-
-
-
-
-
-
 
 
 $("#empty-button").on("click", function() {
@@ -27,7 +21,7 @@ $("#empty-button").on("click", function() {
 })
 
 
-function renderButtons(buttonArray,classToAdd,areaToAddTo){
+function renderButtons(buttonArray,areaToAddTo){
     $(areaToAddTo).empty();
     for (var i = 0; i < buttonArray.length; i++)
     {
@@ -80,7 +74,7 @@ $(document).on("click", ".keywordButton", function() {
                 //create an image tag for the image
                 var image = $("<img>");
                 //add the still attribute on load
-
+                image.css('cursor', 'pointer');
                     //give faves an attribute
                     faves.attr('src', response.data[i].images.fixed_height.url);
 
@@ -148,25 +142,27 @@ $(document).on("click", '#empty-faves', function () {
 //================ Adds user input to the buttonArray
 
 $("#submit-button").on("click", function () {
-    var userAddition = $('input').eq(0).val();
+    var userAddition = $('input').eq(0).val().trim();
     buttonArray.push(userAddition);
-    renderButtons(buttonArray, 'keywordButton', '#keyword-buttons');
+    renderButtons(buttonArray, '#keyword-buttons');
     //empties the text imput field after form is submitted
     $("form").trigger("reset");
-    // $(".reset-keywords").show();
+    $(".reset-keywords").show();
     return false;
 })
 
 
 //================ clear user input to the array
 $("#reset-keywords-button").on("click", function () {
-    buttonArray.length = 0;
     resetButtonsFunction();
 })
 
 function resetButtonsFunction() {
-    var buttonArray = buttonArray;
-    renderButtons(buttonArray,'keywordButton','#keyword-buttons');
+    buttonArray = originalArray.map(function(item){
+        return item;
+    });
+    console.log(originalArray);
+    renderButtons(buttonArray, '#keyword-buttons');
 };
 
 
@@ -188,17 +184,17 @@ $(document).on("click", '.searchImage', function () {
 
 
 
-
 //=============================================
 //CALL FUNCTIONS
 
 //run these functions when the page loads
 $(function(){
     //render the buttons when the page loads
-    renderButtons(buttonArray,'keywordButton','#keyword-buttons');
+    renderButtons(buttonArray,'#keyword-buttons');
     //run addToFavorites
     $(".empty-searches").hide();
     $("#favorites-section").hide();
     $(".reset-keywords").hide();
+
 
 })
